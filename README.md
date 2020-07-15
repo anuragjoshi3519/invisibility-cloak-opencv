@@ -9,7 +9,7 @@ A small and simple python program simulating invisibility cloak using OpenCV lib
 git clone https://github.com/anuragjoshi3519/invisibility-cloak-opencv.git
 cd invisibility-cloak-opencv
 pip install -r requirements.txt
-python3 invisibility.py
+python3 invisibleCloak.py
 ```
 > **Note:**
 
