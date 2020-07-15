@@ -24,7 +24,7 @@ python3 invisibleCloak.py
 - --output or -out :  specify path to directory for saving video (if --save mentioned)
 
 ```bash
-python3 invisibility.py -c <color_name> --save -out path/to/directory
+python3 invisibleCloak.py -c <color_name> --save -out path/to/directory
 ```
 <color_name> can be chosen from 'red' , 'green' , or 'blue'
 
@@ -32,10 +32,10 @@ python3 invisibility.py -c <color_name> --save -out path/to/directory
 
 > Using Green color and saving to videos folder in same directory
 ```bash
-python3 invisibility.py -c green --save
+python3 invisibleCloak.py -c green --save
 ```
 
 > Using Blue color and saving the video to 'Downloads' directory
 ```bash
-python3 invisibility.py -c blue --save -out /home/your_user_name/Downloads
+python3 invisibleCloak.py -c blue --save -out /home/your_user_name/Downloads
 ```
