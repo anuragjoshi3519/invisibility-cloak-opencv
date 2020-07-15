@@ -23,7 +23,7 @@ def useCloak(color,save,out):
 
     time.sleep(1)
 
-    for i in range(30):
+    for i in range(20):
         ret , background_img = cap.read()
 
     if cap.isOpened():
@@ -73,7 +73,7 @@ def useCloak(color,save,out):
 
             # removing noise from the mask
             cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_OPEN,np.ones((3,3),np.uint8),iterations=2)
-            cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_DILATE,np.ones((5,5),np.uint8))
+            cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_DILATE,np.ones((5,5),np.uint8),,iterations=1)
             
             cloak_mask_inv = cv2.bitwise_not(cloak_mask)
             
@@ -102,11 +102,16 @@ def useCloak(color,save,out):
     cv2.destroyAllWindows()
 
 if __name__=='__main__':
+
     parser = argparse.ArgumentParser()
+
     parser.add_argument("-c","--color", help="set color of the cloak", type=str, choices=['red', 'green', 'blue'],default='red')
     parser.add_argument("--save", help="save your video", action="store_true")
     parser.add_argument("-out","--output",type=str , help="path to the directory where you want to save the video", default="")
+    
     args = parser.parse_args()
+
     print("\nPlease use --color or -c argument to choose color of your cloak (default='red').\nUse -h to check other options.")
     print("\npress 'q' to exit.")
+
     useCloak(args.color,args.save,args.output)
