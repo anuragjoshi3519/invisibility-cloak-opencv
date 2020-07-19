@@ -73,7 +73,7 @@ def useCloak(color,save,out):
 
             # removing noise from the mask
             cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_OPEN,np.ones((3,3),np.uint8),iterations=2)
-            cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_DILATE,np.ones((5,5),np.uint8),,iterations=1)
+            cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_DILATE,np.ones((5,5),np.uint8),iterations=1)
             
             cloak_mask_inv = cv2.bitwise_not(cloak_mask)
             
