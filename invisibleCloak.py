@@ -57,12 +57,12 @@ def useCloak(color,save,out):
 
             if color=='red':
                 ## Mask 1 : Taking frame captured, finding the place where cloak is, and getting that area
-                red_min1 = np.array([0,210,50]) 
-                red_max1 = np.array([10,255,255])
+                red_min1 = np.array([0,220,50]) 
+                red_max1 = np.array([9,245,255])
                 mask1 = cv2.inRange(frame_hsv, red_min1,red_max1)
                 
                 ## Mask 2 : Taking frame captured, finding the place where cloak is, and getting that area
-                red_min2 = np.array([170,210,50]) 
+                red_min2 = np.array([170,220,50]) 
                 red_max2 = np.array([179,255,255])
                 mask2 = cv2.inRange(frame_hsv, red_min2, red_max2)
                 
@@ -73,7 +73,7 @@ def useCloak(color,save,out):
 
             # removing noise from the mask
             cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_OPEN,np.ones((3,3),np.uint8),iterations=2)
-            cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_DILATE,np.ones((5,5),np.uint8),iterations=1)
+            cloak_mask = cv2.morphologyEx(cloak_mask, cv2.MORPH_DILATE,np.ones((4,4),np.uint8),iterations=1)
             
             cloak_mask_inv = cv2.bitwise_not(cloak_mask)
             
