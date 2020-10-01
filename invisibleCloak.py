@@ -94,7 +94,7 @@ def useCloak(color,save,out):
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
     else:
-        print("Camera is not working\n Exiting..")
+        print("Your camera is not working\n Exiting..")
 
     if save:
         out.release()    
