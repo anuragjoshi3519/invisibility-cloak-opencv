@@ -8,6 +8,8 @@ A small and simple python program simulating invisibility cloak using OpenCV lib
 ```bash
 git clone https://github.com/anuragjoshi3519/invisibility-cloak-opencv.git
 cd invisibility-cloak-opencv
+python3 -m venv env
+source env/bin/activate
 pip install -r requirements.txt
 python3 invisibleCloak.py
 ```
@@ -17,10 +19,9 @@ python3 invisibleCloak.py
 
 > After running the program you'll have to get out of frame for a couple of second (neccessary for the program to run as expected)
 
-### with options: 
-**Available options:**                   
+### Available options:                  
 - -c or --color    :  to set color of cloak to be used 
-- --save           :  save video
+- --save           :  save video (inside 'invisibility-cloak-opencv/Videos' folder)
 - --output or -out :  specify path to directory for saving video (if --save mentioned)
 
 ```bash
